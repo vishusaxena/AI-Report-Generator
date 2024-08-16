@@ -1,0 +1,20 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "acorn": "^8.12.1",
+    "bcryptjs": "^2.4.3",
+    "esprima": "^4.0.1",
+    "express": "^4.19.2",
+    "jwt-simple": "^0.5.6",
+    "mongoose": "^8.5.3",
+    "multer": "^1.4.5-lts.1"
+  }
+}
