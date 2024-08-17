@@ -1,5 +1,9 @@
 {
   "dependencies": {
-    "jsonwebtoken": "^9.0.2"
+    "axios": "^1.7.4",
+    "docx": "^8.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "openai": "^4.56.0",
+    "pdfkit": "^0.15.0"
   }
 }
