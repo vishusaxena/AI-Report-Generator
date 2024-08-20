@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReportForm from '../componenets/ReportForm';
 import GenerateButton from '../componenets/GenerateButton';
 import ReportDisplay from '../componenets/ReportDisplay';
+import axios from 'axios';
 
 const ReportPage = () => {
   const [topic, setTopic] = useState('');
@@ -9,8 +10,19 @@ const ReportPage = () => {
   const [reportLink, setReportLink] = useState('');
 
   const handleGenerateReport = async () => {
-    // Logic for generating report using Hugging Face API will go here
-    setReportLink('/path-to-generated-report.docx');
+    
+    try {
+      // Make a POST request to the backend with the topic and pages
+      const response = await axios.post('http://localhost:5000/api/reports/generate', { topic, pages });
+      
+      // Extract the file path from the response
+      const filePath = response.data.filePath;
+
+      // Set the report link to the file path for the user to download
+      setReportLink(`http://localhost:5000${filePath}`);
+    } catch (error) {
+      console.error('Error generating report:', error);
+    }
   };
 
   return (

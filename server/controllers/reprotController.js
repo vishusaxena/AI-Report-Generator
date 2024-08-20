@@ -1,5 +1,5 @@
 const { generateReportService } = require('../services/reportService');
-
+const path=require('path');
 const generateReport = async (req, res) => {
   try {
     const { topic, pages } = req.body;
@@ -10,7 +10,7 @@ const generateReport = async (req, res) => {
 
     const reportLink = await generateReportService(topic, pages);
 
-    return res.json({ reportLink });
+    return res.json({filePath: `/reports/${path.basename(reportLink)}`});
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server Error' });

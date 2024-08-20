@@ -3,7 +3,7 @@ import { Button } from 'flowbite-react';
 
 const GenerateButton = ({ onClick }) => {
   return (
-    <Button onClick={onClick} className="w-full">
+    <Button onClick={onClick} className="w-full bg-blue-700 my-4">
       Generate Report
     </Button>
   );
