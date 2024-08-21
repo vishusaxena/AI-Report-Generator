@@ -3,6 +3,7 @@ import ReportForm from '../componenets/ReportForm';
 import GenerateButton from '../componenets/GenerateButton';
 import ReportDisplay from '../componenets/ReportDisplay';
 import axios from 'axios';
+import Navbar from '../componenets/Navbar';
 
 const ReportPage = () => {
   const [topic, setTopic] = useState('');
@@ -26,8 +27,10 @@ const ReportPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <div className="w-full max-w-md bg-white shadow-md rounded-lg p-6">
+    <>
+    <Navbar/>
+    <div className="flex flex-col items-center  min-h-screen bg-gray-100 p-4">
+      <div className="w-full max-w-md bg-white shadow-md rounded-lg p-6 my-10 ">
         <h2 className="text-2xl font-bold mb-6 text-center">AI Report Generator</h2>
         <ReportForm
           topic={topic}
@@ -39,6 +42,7 @@ const ReportPage = () => {
         <ReportDisplay reportLink={reportLink} />
       </div>
     </div>
+    </>
   );
 };
 
